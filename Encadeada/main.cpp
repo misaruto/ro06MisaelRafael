@@ -1,25 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.cpp
- * Author: misael
- *
- * Created on October 5, 2019, 2:00 PM
- */
-
 #include <cstdlib>
+
+#include "Produto.h"
+#include "Encadeada.h"
 
 using namespace std;
 
 /*
  * 
  */
-int main(int argc, char** argv) {
-
+int main() {
+    Encadeada l;
+    l.insert();
+    l.insert();
+    l.insert();
+    l.imprimir();
+    l.insert(2);
+    l.remove(3);
     return 0;
 }
 

@@ -1,38 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Produto.h
- * Author: misael
- *
- * Created on October 5, 2019, 2:05 PM
- */
-
 #ifndef PRODUTO_H
-#define PRODUTO_H
-#include <string.h>
+#define	PRODUTO_H
+
+#include <iostream>
+
 class Produto {
+private:
+    int id;
+    double preco;
+    double custo;
+    int estoque; 
+    
 public:
+    
     Produto();
-    Produto(const Produto& orig);
-    virtual ~Produto();
+    Produto(const Produto &outro);
+    
+    void imprimir() const;
+    void imprimirResumido() const;
+    void preencher();
+    void copiar(const Produto& outro);
+    
+    ///metodo Getters e Setters
     void SetEstoque(int estoque);
     int GetEstoque() const;
-    void SetPreco(float preco);
-    float GetPreco() const;
-    void SetNome(String nome);
-    String GetNome() const;
-    void SetCodigo(int codigo);
-    int GetCodigo() const;
-private:
-    	int codigo;
-	String nome;
-	float preco;
-	int estoque;
+    void SetCusto(double custo);
+    double GetCusto() const;
+    void SetPreco(double preco);
+    double GetPreco() const;
+    void SetId(int id);
+    int GetId() const;
+    
+ 
+
 };
 
-#endif /* PRODUTO_H */
+#endif	/* PRODUTO_H */
 

@@ -1,26 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Produto.cpp
- * Author: misael
- * 
- * Created on October 5, 2019, 2:05 PM
- */
-
 #include "Produto.h"
-#include <string.h>
+
+using namespace std;
 
 Produto::Produto() {
+    id = -1;
+    preco = -1;
+    custo = -1;
+    estoque = -1;    
 }
 
-Produto::Produto(const Produto& orig) {
+Produto::Produto(const Produto& outro){
+    id = outro.GetId();
+    preco = outro.GetPreco();
+    custo = outro.GetCusto();
+    estoque = outro.GetEstoque();
 }
 
-Produto::~Produto() {
+void Produto::preencher(){
+    cout << "--------------- Preencha os dados do produto ------------------\n";
+    cout << "id:";
+    cin >> id;
+    cout << "Custo:";
+    cin >> custo;
+    cout << "Preco:";
+    cin >> preco;
+    cout <<"Estoque:";
+    cin >> estoque;         
+    cout << "---------------------------------------------------------------\n";
+}
+
+void Produto::imprimir() const{
+    cout << "--------------- Produto ------------------\n";
+    cout << "Id:"<< id << endl;
+    cout << "Custo:" << custo << endl;
+    cout << "Preco:" << preco << endl;
+    cout << "Estoque:" << estoque << endl;
+    cout << "-------------------------------------------\n";
+}
+
+void Produto::imprimirResumido() const{
+    cout << "[" << id << "," << custo << ","<< preco << "," << estoque <<"] ->";
+}
+
+void Produto::copiar(const Produto &outro){
+    id = outro.GetId();
+    preco = outro.GetPreco();
+    custo = outro.GetCusto();
+    estoque = outro.GetEstoque();
 }
 
 void Produto::SetEstoque(int estoque) {
@@ -31,27 +57,27 @@ int Produto::GetEstoque() const {
     return estoque;
 }
 
-void Produto::SetPreco(float preco) {
+void Produto::SetCusto(double custo) {
+    this->custo = custo;
+}
+
+double Produto::GetCusto() const {
+    return custo;
+}
+
+void Produto::SetPreco(double preco) {
     this->preco = preco;
 }
 
-float Produto::GetPreco() const {
+double Produto::GetPreco() const {
     return preco;
 }
 
-void Produto::SetNome(String nome) {
-    this->nome = nome;
+void Produto::SetId(int id) {
+    this->id = id;
 }
 
-String Produto::GetNome() const {
-    return nome;
-}
-
-void Produto::SetCodigo(int codigo) {
-    this->codigo = codigo;
-}
-
-int Produto::GetCodigo() const {
-    return codigo;
+int Produto::GetId() const {
+    return id;
 }
 

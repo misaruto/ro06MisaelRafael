@@ -1,27 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Nodo.h
- * Author: misael
- *
- * Created on October 5, 2019, 2:02 PM
- */
-
 #ifndef NODO_H
-#define NODO_H
+#define	NODO_H
+
+#include "Produto.h"
 
 class Nodo {
+private:
+    Produto item;
+    Nodo* prox;
+
 public:
     Nodo();
+    Nodo(Produto &p);
     Nodo(const Nodo& orig);
     virtual ~Nodo();
-private:
+    
+    
+    
+    
+    //GETTERS e SETTERS
+    void SetProx(Nodo* prox);
+    Nodo* GetProx() const;
+    void SetItem(Produto item);
+    Produto GetItem() const;
+
+    
 
 };
 
-#endif /* NODO_H */
+#endif	/* NODO_H */
 
